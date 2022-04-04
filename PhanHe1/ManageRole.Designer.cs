@@ -164,6 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1040, 740);
             this.Controls.Add(this.updateRoleBtn);
             this.Controls.Add(this.deleteRoleBtn);
@@ -177,7 +178,7 @@
             this.Controls.Add(this.manageRolelabel);
             this.Name = "ManageRole";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ManageRole";
+            this.Text = "Quản lý Role";
             this.ResumeLayout(false);
             this.PerformLayout();
 

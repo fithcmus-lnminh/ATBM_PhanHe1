@@ -91,6 +91,7 @@
             this.grantPrivUserBtn.TabIndex = 4;
             this.grantPrivUserBtn.Text = "Cấp quyền người dùng";
             this.grantPrivUserBtn.UseVisualStyleBackColor = false;
+            this.grantPrivUserBtn.Click += new System.EventHandler(this.grantPrivUserBtn_Click);
             // 
             // revokePrivUserBtn
             // 
@@ -103,6 +104,7 @@
             this.revokePrivUserBtn.TabIndex = 5;
             this.revokePrivUserBtn.Text = "Thu hồi quyền người dùng";
             this.revokePrivUserBtn.UseVisualStyleBackColor = false;
+            this.revokePrivUserBtn.Click += new System.EventHandler(this.revokePrivUserBtn_Click);
             // 
             // grantRoleUserBtn
             // 
@@ -115,6 +117,7 @@
             this.grantRoleUserBtn.TabIndex = 6;
             this.grantRoleUserBtn.Text = "Cấp role cho người dùng";
             this.grantRoleUserBtn.UseVisualStyleBackColor = false;
+            this.grantRoleUserBtn.Click += new System.EventHandler(this.grantRoleUserBtn_Click);
             // 
             // revokeRoleUserBtn
             // 
@@ -127,6 +130,7 @@
             this.revokeRoleUserBtn.TabIndex = 7;
             this.revokeRoleUserBtn.Text = "Thu hồi role của người dùng";
             this.revokeRoleUserBtn.UseVisualStyleBackColor = false;
+            this.revokeRoleUserBtn.Click += new System.EventHandler(this.revokeRoleUserBtn_Click);
             // 
             // createUserBtn
             // 
@@ -139,6 +143,7 @@
             this.createUserBtn.TabIndex = 8;
             this.createUserBtn.Text = "Tạo người dùng";
             this.createUserBtn.UseVisualStyleBackColor = false;
+            this.createUserBtn.Click += new System.EventHandler(this.createUserBtn_Click);
             // 
             // deleteUserBtn
             // 
@@ -151,6 +156,7 @@
             this.deleteUserBtn.TabIndex = 9;
             this.deleteUserBtn.Text = "Xóa người dùng";
             this.deleteUserBtn.UseVisualStyleBackColor = false;
+            this.deleteUserBtn.Click += new System.EventHandler(this.deleteUserBtn_Click);
             // 
             // updateUserBtn
             // 
@@ -163,6 +169,7 @@
             this.updateUserBtn.TabIndex = 10;
             this.updateUserBtn.Text = "Sửa người dùng";
             this.updateUserBtn.UseVisualStyleBackColor = false;
+            this.updateUserBtn.Click += new System.EventHandler(this.updateUserBtn_Click);
             // 
             // updatePrivUserBtn
             // 
@@ -175,13 +182,14 @@
             this.updatePrivUserBtn.TabIndex = 11;
             this.updatePrivUserBtn.Text = "Chỉnh sửa quyền người dùng";
             this.updatePrivUserBtn.UseVisualStyleBackColor = false;
+            this.updatePrivUserBtn.Click += new System.EventHandler(this.updatePrivUserBtn_Click);
             // 
             // ManageUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.Menu;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(978, 833);
             this.Controls.Add(this.updatePrivUserBtn);
             this.Controls.Add(this.updateUserBtn);
