@@ -74,11 +74,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateRole.Designer.cs">
+      <DependentUpon>CreateRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateUser.Designer.cs">
       <DependentUpon>CreateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteRole.Designer.cs">
+      <DependentUpon>DeleteRole.cs</DependentUpon>
     </Compile>
     <Compile Include="DeleteUser.cs">
       <SubType>Form</SubType>
@@ -98,11 +110,23 @@
     <Compile Include="GrantPrivUser.Designer.cs">
       <DependentUpon>GrantPrivUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="GrantRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrantRole.Designer.cs">
+      <DependentUpon>GrantRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="GrantRoleUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GrantRoleUser.Designer.cs">
       <DependentUpon>GrantRoleUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListRole.Designer.cs">
+      <DependentUpon>ListRole.cs</DependentUpon>
     </Compile>
     <Compile Include="ListUser.cs">
       <SubType>Form</SubType>
@@ -124,6 +148,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RevokePrivRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RevokePrivRole.Designer.cs">
+      <DependentUpon>RevokePrivRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="RevokePrivUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,11 +166,35 @@
     <Compile Include="RevokeRoleUser.Designer.cs">
       <DependentUpon>RevokeRoleUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="RolePriv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RolePriv.Designer.cs">
+      <DependentUpon>RolePriv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoleUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoleUser.Designer.cs">
+      <DependentUpon>RoleUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePrivRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePrivRole.Designer.cs">
+      <DependentUpon>UpdatePrivRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdatePrivUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UpdatePrivUser.Designer.cs">
       <DependentUpon>UpdatePrivUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateRole.Designer.cs">
+      <DependentUpon>UpdateRole.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateUser.cs">
       <SubType>Form</SubType>
@@ -154,8 +208,14 @@
     <Compile Include="UserPriv.Designer.cs">
       <DependentUpon>UserPriv.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CreateRole.resx">
+      <DependentUpon>CreateRole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteRole.resx">
+      <DependentUpon>DeleteRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteUser.resx">
       <DependentUpon>DeleteUser.cs</DependentUpon>
@@ -166,8 +226,14 @@
     <EmbeddedResource Include="GrantPrivUser.resx">
       <DependentUpon>GrantPrivUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GrantRole.resx">
+      <DependentUpon>GrantRole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GrantRoleUser.resx">
       <DependentUpon>GrantRoleUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListRole.resx">
+      <DependentUpon>ListRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListUser.resx">
       <DependentUpon>ListUser.cs</DependentUpon>
@@ -187,14 +253,29 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RevokePrivRole.resx">
+      <DependentUpon>RevokePrivRole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RevokePrivUser.resx">
       <DependentUpon>RevokePrivUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RevokeRoleUser.resx">
       <DependentUpon>RevokeRoleUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RolePriv.resx">
+      <DependentUpon>RolePriv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoleUser.resx">
+      <DependentUpon>RoleUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePrivRole.resx">
+      <DependentUpon>UpdatePrivRole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdatePrivUser.resx">
       <DependentUpon>UpdatePrivUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateRole.resx">
+      <DependentUpon>UpdateRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateUser.resx">
       <DependentUpon>UpdateUser.cs</DependentUpon>

@@ -63,6 +63,7 @@
             this.updateRoleBtn.TabIndex = 19;
             this.updateRoleBtn.Text = "Sửa role";
             this.updateRoleBtn.UseVisualStyleBackColor = false;
+            this.updateRoleBtn.Click += new System.EventHandler(this.updateRoleBtn_Click);
             // 
             // deleteRoleBtn
             // 
@@ -75,6 +76,7 @@
             this.deleteRoleBtn.TabIndex = 18;
             this.deleteRoleBtn.Text = "Xóa role";
             this.deleteRoleBtn.UseVisualStyleBackColor = false;
+            this.deleteRoleBtn.Click += new System.EventHandler(this.deleteRoleBtn_Click);
             // 
             // createRoleBtn
             // 
@@ -87,6 +89,7 @@
             this.createRoleBtn.TabIndex = 17;
             this.createRoleBtn.Text = "Tạo role";
             this.createRoleBtn.UseVisualStyleBackColor = false;
+            this.createRoleBtn.Click += new System.EventHandler(this.createRoleBtn_Click);
             // 
             // updatePrivRoleBtn
             // 
@@ -99,6 +102,7 @@
             this.updatePrivRoleBtn.TabIndex = 16;
             this.updatePrivRoleBtn.Text = "Chỉnh sửa quyền của role";
             this.updatePrivRoleBtn.UseVisualStyleBackColor = false;
+            this.updatePrivRoleBtn.Click += new System.EventHandler(this.updatePrivRoleBtn_Click);
             // 
             // revokePrivRoleBtn
             // 
@@ -111,6 +115,7 @@
             this.revokePrivRoleBtn.TabIndex = 15;
             this.revokePrivRoleBtn.Text = "Thu hồi quyền của role";
             this.revokePrivRoleBtn.UseVisualStyleBackColor = false;
+            this.revokePrivRoleBtn.Click += new System.EventHandler(this.revokePrivRoleBtn_Click);
             // 
             // grantPrivRoleBtn
             // 
@@ -123,6 +128,7 @@
             this.grantPrivRoleBtn.TabIndex = 14;
             this.grantPrivRoleBtn.Text = "Cấp quyền cho role";
             this.grantPrivRoleBtn.UseVisualStyleBackColor = false;
+            this.grantPrivRoleBtn.Click += new System.EventHandler(this.grantPrivRoleBtn_Click);
             // 
             // roleUserBtn
             // 
@@ -135,6 +141,7 @@
             this.roleUserBtn.TabIndex = 13;
             this.roleUserBtn.Text = "Xem thông tin role của người dùng";
             this.roleUserBtn.UseVisualStyleBackColor = false;
+            this.roleUserBtn.Click += new System.EventHandler(this.roleUserBtn_Click);
             // 
             // roleInfoBtn
             // 
@@ -147,6 +154,7 @@
             this.roleInfoBtn.TabIndex = 12;
             this.roleInfoBtn.Text = "Xem thông tin quyền của role";
             this.roleInfoBtn.UseVisualStyleBackColor = false;
+            this.roleInfoBtn.Click += new System.EventHandler(this.roleInfoBtn_Click);
             // 
             // listRoleBtn
             // 
@@ -159,6 +167,7 @@
             this.listRoleBtn.TabIndex = 11;
             this.listRoleBtn.Text = "Xem danh sách role";
             this.listRoleBtn.UseVisualStyleBackColor = false;
+            this.listRoleBtn.Click += new System.EventHandler(this.listRoleBtn_Click);
             // 
             // ManageRole
             // 
