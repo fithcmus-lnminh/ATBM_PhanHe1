@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business_Logic_Layer;
+using Object;
+using Data_Access_Layer;
 
 namespace PhanHe1
 {
@@ -15,6 +18,25 @@ namespace PhanHe1
         public ListUser()
         {
             InitializeComponent();
+            LoadListUsers();
+        }
+        private void LoadListUsers()
+        {
+            BLL bll = new BLL();
+            var listUsers = bll.getListUsers();
+            ConvertListUsersToListView(ListUserlv, listUsers);
+        }
+
+        private void ConvertListUsersToListView(ListView listViewUsers, List<ListUsers> ListUsers)
+        {
+            listViewUsers.Items.Clear();
+            foreach (var l in ListUsers)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Tag = l;
+                item.Text = l.Username;
+                listViewUsers.Items.Add(item);
+            }
         }
     }
 }

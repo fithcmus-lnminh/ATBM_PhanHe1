@@ -309,5 +309,19 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business Logic Layer\Business Logic Layer.csproj">
+      <Project>{a970ab34-f78e-41ac-93aa-15e6a38ff736}</Project>
+      <Name>Business Logic Layer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data Access Layer\Data Access Layer.csproj">
+      <Project>{c497a1af-8873-4794-91c9-272d9f46b77a}</Project>
+      <Name>Data Access Layer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Object\Object.csproj">
+      <Project>{4b874afc-efc8-4d9b-b4a5-42dac2f7e617}</Project>
+      <Name>Object</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
