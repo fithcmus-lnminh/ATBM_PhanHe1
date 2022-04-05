@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business_Logic_Layer;
 using Object;
-using Data_Access_Layer;
 
 namespace PhanHe1
 {
@@ -27,7 +26,7 @@ namespace PhanHe1
             ConvertListUsersToListView(ListUserlv, listUsers);
         }
 
-        private void ConvertListUsersToListView(ListView listViewUsers, List<ListUsers> ListUsers)
+        private void ConvertListUsersToListView(ListView listViewUsers, List<User> ListUsers)
         {
             listViewUsers.Items.Clear();
             foreach (var l in ListUsers)

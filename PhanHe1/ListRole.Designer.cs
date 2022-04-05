@@ -62,7 +62,6 @@
             this.manageRolelabel.TabIndex = 4;
             this.manageRolelabel.Text = "DANH SÁCH ROLE";
             this.manageRolelabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.manageRolelabel.Click += new System.EventHandler(this.manageUserlabel_Click);
             // 
             // ListRole
             // 

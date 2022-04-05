@@ -10,11 +10,17 @@ namespace Business_Logic_Layer
 {
     public class BLL
     {
-        public List<ListUsers> getListUsers()
+        public List<User> getListUsers()
         {
             DAL res = new DAL();
-            var users = res.getListUsersFromDatabase();
+            var users = res.GetListUsersFromDatabase();
             return users;
+        }
+        public List<Role> getListRoles()
+        {
+            DAL res = new DAL();
+            var roles = res.GetListRolesFromDatabase();
+            return roles;
         }
     }
 }

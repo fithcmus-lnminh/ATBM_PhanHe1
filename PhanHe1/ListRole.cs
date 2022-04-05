@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business_Logic_Layer;
+using Object;
 
 namespace PhanHe1
 {
@@ -15,11 +17,25 @@ namespace PhanHe1
         public ListRole()
         {
             InitializeComponent();
+            LoadListRoles();
+        }
+        private void LoadListRoles()
+        {
+            BLL bll = new BLL();
+            var listRoles = bll.getListRoles();
+            ConvertListUsersToListView(ListRolelv, listRoles);
         }
 
-        private void manageUserlabel_Click(object sender, EventArgs e)
+        private void ConvertListUsersToListView(ListView listViewUsers, List<Role> roles)
         {
-           
+            listViewUsers.Items.Clear();
+            foreach (var l in roles)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Tag = l;
+                item.Text = l.Rolename;
+                listViewUsers.Items.Add(item);
+            }
         }
     }
 }

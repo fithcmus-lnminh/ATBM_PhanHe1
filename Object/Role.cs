@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Object
 {
-    public class ListUsers
+    public class Role
     {
-        public ListUsers() { }
-        public ListUsers(string name)
+        public Role() { }
+        public Role(string name)
         {
-            Username = name;
+            Rolename = name;
         }
-        public string Username { get; set; }
+
+        public string Rolename { get; set; }
     }
 }

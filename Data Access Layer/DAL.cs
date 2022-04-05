@@ -22,9 +22,9 @@ namespace Data_Access_Layer
             conn.Open();
             return conn;
         }
-        public List<ListUsers> getListUsersFromDatabase()
+        public List<User> GetListUsersFromDatabase()
         {
-            var users = new List<ListUsers>();
+            var users = new List<User>();
             OracleConnection conn = ConnectToOracle();
             OracleCommand oc = new OracleCommand();
             oc.Connection = conn;
@@ -32,10 +32,25 @@ namespace Data_Access_Layer
             var reader = oc.ExecuteReader();
             while (reader.Read())
             {
-                users.Add(new ListUsers(reader.GetString(0)));
+                users.Add(new User(reader.GetString(0)));
             }
             conn.Close();
             return users;
+        }
+        public List<Role> GetListRolesFromDatabase()
+        {
+            var roles = new List<Role>();
+            OracleConnection conn = ConnectToOracle();
+            OracleCommand oc = new OracleCommand();
+            oc.Connection = conn;
+            oc.CommandText = "SELECT role FROM dba_roles";
+            var reader = oc.ExecuteReader();
+            while (reader.Read())
+            {
+                roles.Add(new Role(reader.GetString(0)));
+            }
+            conn.Close();
+            return roles;
         }
     }
 }
