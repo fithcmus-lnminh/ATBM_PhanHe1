@@ -1,0 +1,113 @@
+
+CREATE OR REPLACE PROCEDURE Create_User_Procedure
+  (user_name IN VARCHAR2 , u_password IN VARCHAR2)
+IS
+    user_name_upper VARCHAR(30) := UPPER(user_name);
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('CREATE USER ' || user_name_upper || ' IDENTIFIED BY ' || u_password || ' DEFAULT TABLESPACE USERS TEMPORARY TABLESPACE temp');
+    EXECUTE IMMEDIATE ('GRANT CREATE SESSION TO ' || user_name_upper);
+END;
+/
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE Update_User_Procedure
+  (user_name IN VARCHAR2 , new_password IN VARCHAR2)
+IS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('ALTER USER ' || user_name || ' IDENTIFIED BY ' || new_password || ' DEFAULT TABLESPACE USERS TEMPORARY TABLESPACE temp ACCOUNT UNLOCK');
+END;
+/
+
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE Delete_User_Procedure
+  (user_name IN VARCHAR2)
+IS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('DROP USER ' || user_name || ' CASCADE');
+END;
+/
+
+
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE Create_Role_Procedure
+  (role_name IN VARCHAR2, role_password IN VARCHAR2)
+IS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('CREATE ROLE ' || role_name || ' IDENTIFIED BY ' || role_password);
+END;
+/
+
+
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE Update_Role_Procedure
+  (role_name IN VARCHAR2 , new_password IN VARCHAR2)
+IS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('ALTER ROLE ' || role_name || ' IDENTIFIED BY ' || new_password);
+END;
+/
+
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE Delete_Role_Procedure
+  (role_name IN VARCHAR2)
+IS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('DROP ROLE ' || role_name);
+END;
+/
+
+
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE Revoke_Priv_User_Procedure
+  (user_name IN VARCHAR2, priv IN VARCHAR2)
+IS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('REVOKE ' || priv || ' FROM ' || user_name);
+END;
+/
+
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE Revoke_Priv_Role_Procedure
+  (role_name IN VARCHAR2, priv IN VARCHAR2)
+IS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('REVOKE ' || priv || ' FROM ' || role_name);
+END;
+/
+
+

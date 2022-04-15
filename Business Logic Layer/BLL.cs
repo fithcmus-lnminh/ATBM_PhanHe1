@@ -22,5 +22,58 @@ namespace Business_Logic_Layer
             var roles = res.GetListRolesFromDatabase();
             return roles;
         }
+        public bool createUserBLL(String username, String pwd)
+        {
+            DAL res = new DAL();
+            return res.createUserInDatabase(username, pwd);
+        }
+
+        public bool updateUserBLL(String username, String pwd)
+        {
+            DAL res = new DAL();
+            return res.updateUserInDatabase(username, pwd);
+        }
+
+        public bool deleteUserBLL(String username)
+        {
+            DAL res = new DAL();
+            return res.deleteUserInDatabase(username);
+        }
+
+        public bool createRoleBLL(String rolename, String pwd)
+        {
+            DAL res = new DAL();
+            return res.createRoleInDatabase(rolename, pwd);
+        }
+
+        public bool updateRoleBLL(String rolename, String pwd)
+        {
+            DAL res = new DAL();
+            return res.updateRoleInDatabase(rolename, pwd);
+        }
+
+        public bool deleteRoleBLL(String rolename)
+        {
+            DAL res = new DAL();
+            return res.deleteRoleInDatabase(rolename);
+        }
+
+         public List<Priv> getListPrivs(String name, String typePriv, String typeObjectGrantee)
+        {
+            DAL res = new DAL();
+            var privs = res.GetListPrivsFromDatabase(name, typePriv, typeObjectGrantee);
+            return privs;
+        }       
+        
+        public bool revokePrivUserBLL(String user, String priv)
+        {
+            DAL res = new DAL();
+            return res.revokePrivUserInDatabase(user, priv);
+        }
+        public bool revokePrivRoleBLL(String role, String priv)
+        {
+            DAL res = new DAL();
+            return res.revokePrivRoleInDatabase(role, priv);
+        }
     }
 }
