@@ -5,5 +5,115 @@ create user dbadmin identified by dbadmin
         Quota 10M on users;
 /
 --Grant quyen cho dbadmin
-grant create session, create user, drop user, create role, drop any role, create procedure, execute any procedure, alter any procedure, drop any procedure, select any table, create table, insert any table, update any table, drop any table to dbadmin with admin option;
+
 grant dba to dbadmin;
+GRANT CREATE SESSION, CREATE USER, ALTER USER, DROP USER, CREATE ROLE, ALTER ANY ROLE, DROP ANY ROLE, CREATE PROCEDURE, EXECUTE ANY PROCEDURE, ALTER ANY PROCEDURE, DROP ANY PROCEDURE, SELECT ANY TABLE, CREATE TABLE, INSERT ANY TABLE, UPDATE ANY TABLE, DROP ANY TABLE TO DBADMIN WITH ADMIN OPTION;
+GRANT ALL PRIVILEGES to dbadmin;
+
+
+CREATE OR REPLACE PROCEDURE Create_User_Procedure
+  (user_name IN VARCHAR2 , u_password IN VARCHAR2)
+IS
+    user_name_upper VARCHAR(30) := UPPER(user_name);
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('CREATE USER ' || user_name_upper || ' IDENTIFIED BY ' || u_password || ' DEFAULT TABLESPACE USERS TEMPORARY TABLESPACE temp');
+    EXECUTE IMMEDIATE ('GRANT CREATE SESSION TO ' || user_name_upper);
+END;
+/
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE Update_User_Procedure
+  (user_name IN VARCHAR2 , new_password IN VARCHAR2)
+IS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('ALTER USER ' || user_name || ' IDENTIFIED BY ' || new_password || ' DEFAULT TABLESPACE USERS TEMPORARY TABLESPACE temp ACCOUNT UNLOCK');
+END;
+/
+
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE Delete_User_Procedure
+  (user_name IN VARCHAR2)
+IS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('DROP USER ' || user_name || ' CASCADE');
+END;
+/
+
+
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE Create_Role_Procedure
+  (role_name IN VARCHAR2, role_password IN VARCHAR2)
+IS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('CREATE ROLE ' || role_name || ' IDENTIFIED BY ' || role_password);
+END;
+/
+
+
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE Update_Role_Procedure
+  (role_name IN VARCHAR2 , new_password IN VARCHAR2)
+IS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('ALTER ROLE ' || role_name || ' IDENTIFIED BY ' || new_password);
+END;
+/
+
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE Delete_Role_Procedure
+  (role_name IN VARCHAR2)
+IS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('DROP ROLE ' || role_name);
+END;
+/
+
+
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE Revoke_Priv_User_Procedure
+  (user_name IN VARCHAR2, priv IN VARCHAR2)
+IS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('REVOKE ' || priv || ' FROM ' || user_name);
+END;
+/
+
+
+CREATE OR REPLACE PROCEDURE Revoke_Priv_Role_Procedure
+  (role_name IN VARCHAR2, priv IN VARCHAR2)
+IS
+BEGIN
+    EXECUTE IMMEDIATE ('ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE');
+    EXECUTE IMMEDIATE ('REVOKE ' || priv || ' FROM ' || role_name);
+END;
+/
