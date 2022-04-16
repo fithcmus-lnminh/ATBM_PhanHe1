@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
+using System.Data.Common;
 using Object;
 using System.Data;
 
@@ -483,5 +484,70 @@ namespace Data_Access_Layer
 
             return status;
         }
-    }
+        public List<Privilege> GetPrivilegesByUserNameOrRoleName(string name)
+        {
+            var privileges = new List<Privilege>();
+            OracleConnection conn = ConnectToOracle();
+            OracleCommand oc = new OracleCommand();
+            oc.Connection = conn;
+            oc.CommandText = "SELECT GRANTEE, PRIVILEGE, ADMIN_OPTION FROM DBA_SYS_PRIVS WHERE GRANTEE = '" + name + "'";
+            using (DbDataReader reader = oc.ExecuteReader())
+            {
+
+                while (reader.Read())
+                {
+                    // Chỉ số (index) của cột GRANTEE trong câu lệnh SQL.
+                    int UsernaneIndex = reader.GetOrdinal("GRANTEE"); // 0
+                    string Username = reader.GetString(UsernaneIndex);
+
+                    // Chỉ số của cột PRIVILEGE là 1.
+                    int privilegeIndex = reader.GetOrdinal("PRIVILEGE");// 1
+                    string privilege = reader.GetString(privilegeIndex);
+
+
+                    int admin_optionIndex = reader.GetOrdinal("ADMIN_OPTION");
+                    string admin_option = reader.GetString(admin_optionIndex);
+
+                    privileges.Add(new Privilege(Username, privilege, admin_option));
+                }
+            }
+            conn.Close();
+            return privileges;
+        }
+
+        public void GrantUserToRole(string query)
+        {
+            OracleConnection conn = ConnectToOracle();
+            OracleCommand oc = new OracleCommand();
+            oc.Connection = conn;
+            oc.CommandText = query;
+            oc.ExecuteNonQuery();
+        }
+
+        public List<Role> GetListPrivilegeSYSDAL()
+        {
+            var pri = new List<Role>();
+            OracleConnection conn = ConnectToOracle();
+            OracleCommand oc = new OracleCommand();
+            oc.Connection = conn;
+            oc.CommandText = "SELECT distinct(privilege) FROM dba_sys_privs";
+            var reader = oc.ExecuteReader();
+            while (reader.Read())
+            {
+                pri.Add(new Role(reader.GetString(0)));
+            }
+            conn.Close();
+            return pri;
+        }
+
+        public void grantPriToRoleDAL(string query)
+        {
+            OracleConnection conn = ConnectToOracle();
+            OracleCommand oc = new OracleCommand();
+            oc.Connection = conn;
+            oc.CommandText = query;
+            oc.ExecuteNonQuery();
+        }
 }
+}
+

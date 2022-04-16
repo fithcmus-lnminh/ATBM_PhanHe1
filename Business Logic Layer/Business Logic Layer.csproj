@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,7 +51,7 @@
       <Name>Data Access Layer</Name>
     </ProjectReference>
     <ProjectReference Include="..\Object\Object.csproj">
-      <Project>{4b874afc-efc8-4d9b-b4a5-42dac2f7e617}</Project>
+      <Project>{3a600f83-89f6-4a9d-8a1b-00793b029c3e}</Project>
       <Name>Object</Name>
     </ProjectReference>
   </ItemGroup>

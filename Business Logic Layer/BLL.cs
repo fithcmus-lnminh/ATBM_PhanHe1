@@ -75,5 +75,31 @@ namespace Business_Logic_Layer
             DAL res = new DAL();
             return res.revokePrivRoleInDatabase(role, priv);
         }
+
+        public List<Privilege> getListPrivilegesByUserNameOrRoleName(string username)
+        {
+            DAL res = new DAL();
+            var privileges = res.GetPrivilegesByUserNameOrRoleName(username);
+            return privileges;
+        }
+
+        public void grantUserToRole(string query)
+        {
+            DAL res = new DAL();
+            res.GrantUserToRole(query);
+        }
+
+        public List<Role> getListPrivilegeSYS()
+        {
+            DAL res = new DAL();
+            var privileges = res.GetListPrivilegeSYSDAL();
+            return privileges;
+        }
+
+        public void grantPriToRole(string query)
+        {
+            DAL res = new DAL();
+            res.grantPriToRoleDAL(query);
+        }
     }
 }

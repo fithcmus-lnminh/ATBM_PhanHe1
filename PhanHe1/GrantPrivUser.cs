@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business_Logic_Layer;
+using Object;
 
 namespace PhanHe1
 {
@@ -15,6 +17,34 @@ namespace PhanHe1
         public GrantPrivUser()
         {
             InitializeComponent();
-        }
+			LoadListUsers();
+			LoadListPrivilegeSYS();
+		}
+		private void LoadListUsers()
+		{
+			BLL bll = new BLL();
+			var listUsers = bll.getListUsers();
+			listUserCbb.DataSource = listUsers;
+			listUserCbb.DisplayMember = "Username";
+		}
+
+		private void LoadListPrivilegeSYS()
+        {
+			BLL bll = new BLL();
+			var listPri = bll.getListPrivilegeSYS();
+			listPriCbb.DataSource = listPri;
+			listPriCbb.DisplayMember = "Rolename";
+		}
+
+        private void grantBtn_Click(object sender, EventArgs e)
+        {
+			string username = listUserCbb.Text;
+			string priname = listPriCbb.Text;
+			string adminOption = withAdminOption.CheckState == CheckState.Checked ? "WITH ADMIN OPTION" : "";
+			string query = "grant " + priname + " to " + username + " " + adminOption;
+			BLL bll = new BLL();
+			bll.grantUserToRole(query);
+			MessageBox.Show("Cấp quyền cho "  +  username + " thành công!");
+		}
     }
 }

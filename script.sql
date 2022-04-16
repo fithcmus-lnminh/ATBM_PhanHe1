@@ -5,7 +5,6 @@ create user dbadmin identified by dbadmin
         Quota 10M on users;
 /
 --Grant quyen cho dbadmin
-
 grant dba to dbadmin;
 GRANT CREATE SESSION, CREATE USER, ALTER USER, DROP USER, CREATE ROLE, ALTER ANY ROLE, DROP ANY ROLE, CREATE PROCEDURE, EXECUTE ANY PROCEDURE, ALTER ANY PROCEDURE, DROP ANY PROCEDURE, SELECT ANY TABLE, CREATE TABLE, INSERT ANY TABLE, UPDATE ANY TABLE, DROP ANY TABLE TO DBADMIN WITH ADMIN OPTION;
 GRANT ALL PRIVILEGES to dbadmin;
@@ -23,9 +22,6 @@ END;
 /
 
 
-
-
-
 CREATE OR REPLACE PROCEDURE Update_User_Procedure
   (user_name IN VARCHAR2 , new_password IN VARCHAR2)
 IS
@@ -34,11 +30,6 @@ BEGIN
     EXECUTE IMMEDIATE ('ALTER USER ' || user_name || ' IDENTIFIED BY ' || new_password || ' DEFAULT TABLESPACE USERS TEMPORARY TABLESPACE temp ACCOUNT UNLOCK');
 END;
 /
-
-
-
-
-
 
 CREATE OR REPLACE PROCEDURE Delete_User_Procedure
   (user_name IN VARCHAR2)
@@ -49,12 +40,6 @@ BEGIN
 END;
 /
 
-
-
-
-
-
-
 CREATE OR REPLACE PROCEDURE Create_Role_Procedure
   (role_name IN VARCHAR2, role_password IN VARCHAR2)
 IS
@@ -63,12 +48,6 @@ BEGIN
     EXECUTE IMMEDIATE ('CREATE ROLE ' || role_name || ' IDENTIFIED BY ' || role_password);
 END;
 /
-
-
-
-
-
-
 
 CREATE OR REPLACE PROCEDURE Update_Role_Procedure
   (role_name IN VARCHAR2 , new_password IN VARCHAR2)
@@ -79,11 +58,6 @@ BEGIN
 END;
 /
 
-
-
-
-
-
 CREATE OR REPLACE PROCEDURE Delete_Role_Procedure
   (role_name IN VARCHAR2)
 IS
@@ -92,12 +66,6 @@ BEGIN
     EXECUTE IMMEDIATE ('DROP ROLE ' || role_name);
 END;
 /
-
-
-
-
-
-
 
 CREATE OR REPLACE PROCEDURE Revoke_Priv_User_Procedure
   (user_name IN VARCHAR2, priv IN VARCHAR2)
