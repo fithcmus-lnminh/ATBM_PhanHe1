@@ -90,12 +90,12 @@
             // 
             // GRANTEE
             // 
-            this.GRANTEE.Text = "GRANTEE";
+            this.GRANTEE.Text = "Role Name";
             this.GRANTEE.Width = 150;
             // 
             // GRANTED_ROLE
             // 
-            this.GRANTED_ROLE.Text = "GRANTED_ROLE";
+            this.GRANTED_ROLE.Text = "Privillege";
             this.GRANTED_ROLE.Width = 350;
             // 
             // Admin_option

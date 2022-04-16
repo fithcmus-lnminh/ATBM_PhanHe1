@@ -76,5 +76,10 @@ namespace PhanHe1
                 activeRole = cl.Rolename;
             }
         }
+
+        private void updateRoleCbb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

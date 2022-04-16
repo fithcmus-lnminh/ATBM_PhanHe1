@@ -55,6 +55,7 @@
             this.listRoleCbb.Name = "listRoleCbb";
             this.listRoleCbb.Size = new System.Drawing.Size(254, 28);
             this.listRoleCbb.TabIndex = 43;
+            this.listRoleCbb.SelectedIndexChanged += new System.EventHandler(this.listRoleCbb_SelectedIndexChanged);
             // 
             // privUserLv
             // 

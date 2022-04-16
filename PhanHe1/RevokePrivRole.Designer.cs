@@ -43,10 +43,10 @@
             this.revokeBtn.BackColor = System.Drawing.Color.Red;
             this.revokeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.revokeBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.revokeBtn.Location = new System.Drawing.Point(342, 306);
+            this.revokeBtn.Location = new System.Drawing.Point(402, 331);
             this.revokeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.revokeBtn.Name = "revokeBtn";
-            this.revokeBtn.Size = new System.Drawing.Size(164, 40);
+            this.revokeBtn.Size = new System.Drawing.Size(184, 50);
             this.revokeBtn.TabIndex = 48;
             this.revokeBtn.Text = "REVOKE";
             this.revokeBtn.UseVisualStyleBackColor = false;
@@ -56,20 +56,21 @@
             // 
             this.listRoleCbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listRoleCbb.FormattingEnabled = true;
-            this.listRoleCbb.Location = new System.Drawing.Point(321, 150);
+            this.listRoleCbb.Location = new System.Drawing.Point(402, 141);
             this.listRoleCbb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listRoleCbb.Name = "listRoleCbb";
-            this.listRoleCbb.Size = new System.Drawing.Size(367, 24);
+            this.listRoleCbb.Size = new System.Drawing.Size(412, 28);
             this.listRoleCbb.TabIndex = 46;
+            this.listRoleCbb.SelectedIndexChanged += new System.EventHandler(this.listRoleCbb_SelectedIndexChanged);
             this.listRoleCbb.SelectedValueChanged += new System.EventHandler(this.listRoleCbb_SelectedValueChanged);
             // 
             // chooseRolenameLb
             // 
             this.chooseRolenameLb.AutoSize = true;
             this.chooseRolenameLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chooseRolenameLb.Location = new System.Drawing.Point(119, 150);
+            this.chooseRolenameLb.Location = new System.Drawing.Point(175, 141);
             this.chooseRolenameLb.Name = "chooseRolenameLb";
-            this.chooseRolenameLb.Size = new System.Drawing.Size(113, 25);
+            this.chooseRolenameLb.Size = new System.Drawing.Size(134, 29);
             this.chooseRolenameLb.TabIndex = 45;
             this.chooseRolenameLb.Text = "Chọn role:";
             // 
@@ -78,9 +79,9 @@
             this.manageRolelabel.AutoSize = true;
             this.manageRolelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.manageRolelabel.ForeColor = System.Drawing.Color.MediumBlue;
-            this.manageRolelabel.Location = new System.Drawing.Point(174, 46);
+            this.manageRolelabel.Location = new System.Drawing.Point(196, 58);
             this.manageRolelabel.Name = "manageRolelabel";
-            this.manageRolelabel.Size = new System.Drawing.Size(514, 42);
+            this.manageRolelabel.Size = new System.Drawing.Size(607, 52);
             this.manageRolelabel.TabIndex = 44;
             this.manageRolelabel.Text = "THU HỒI QUYỀN CỦA ROLE";
             this.manageRolelabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,9 +90,9 @@
             // 
             this.chooseTypePrivLb.AutoSize = true;
             this.chooseTypePrivLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chooseTypePrivLb.Location = new System.Drawing.Point(119, 196);
+            this.chooseTypePrivLb.Location = new System.Drawing.Point(175, 198);
             this.chooseTypePrivLb.Name = "chooseTypePrivLb";
-            this.chooseTypePrivLb.Size = new System.Drawing.Size(176, 25);
+            this.chooseTypePrivLb.Size = new System.Drawing.Size(208, 29);
             this.chooseTypePrivLb.TabIndex = 49;
             this.chooseTypePrivLb.Text = "Chọn loại quyền:";
             // 
@@ -99,9 +100,9 @@
             // 
             this.choosePrivLb.AutoSize = true;
             this.choosePrivLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.choosePrivLb.Location = new System.Drawing.Point(119, 244);
+            this.choosePrivLb.Location = new System.Drawing.Point(175, 258);
             this.choosePrivLb.Name = "choosePrivLb";
-            this.choosePrivLb.Size = new System.Drawing.Size(136, 25);
+            this.choosePrivLb.Size = new System.Drawing.Size(158, 29);
             this.choosePrivLb.TabIndex = 50;
             this.choosePrivLb.Text = "Chọn quyền:";
             // 
@@ -109,10 +110,10 @@
             // 
             this.listTypePrivCbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listTypePrivCbb.FormattingEnabled = true;
-            this.listTypePrivCbb.Location = new System.Drawing.Point(321, 196);
+            this.listTypePrivCbb.Location = new System.Drawing.Point(402, 198);
             this.listTypePrivCbb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listTypePrivCbb.Name = "listTypePrivCbb";
-            this.listTypePrivCbb.Size = new System.Drawing.Size(367, 24);
+            this.listTypePrivCbb.Size = new System.Drawing.Size(412, 28);
             this.listTypePrivCbb.TabIndex = 51;
             this.listTypePrivCbb.SelectedValueChanged += new System.EventHandler(this.listTypePrivCbb_SelectedValueChanged);
             // 
@@ -120,19 +121,19 @@
             // 
             this.listPrivCbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listPrivCbb.FormattingEnabled = true;
-            this.listPrivCbb.Location = new System.Drawing.Point(321, 244);
+            this.listPrivCbb.Location = new System.Drawing.Point(402, 258);
             this.listPrivCbb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listPrivCbb.Name = "listPrivCbb";
-            this.listPrivCbb.Size = new System.Drawing.Size(367, 24);
+            this.listPrivCbb.Size = new System.Drawing.Size(412, 28);
             this.listPrivCbb.TabIndex = 52;
             this.listPrivCbb.SelectedValueChanged += new System.EventHandler(this.listPrivCbb_SelectedValueChanged);
             // 
             // RevokePrivRole
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(895, 370);
+            this.ClientSize = new System.Drawing.Size(981, 423);
             this.Controls.Add(this.listPrivCbb);
             this.Controls.Add(this.listTypePrivCbb);
             this.Controls.Add(this.choosePrivLb);

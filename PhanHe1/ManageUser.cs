@@ -53,12 +53,6 @@ namespace PhanHe1
             GrantRole.ShowDialog();
         }
 
-        private void revokeRoleUserBtn_Click(object sender, EventArgs e)
-        {
-            Form RevokeRole = new RevokeRoleUser();
-            RevokeRole.ShowDialog();
-        }
-
         private void createUserBtn_Click(object sender, EventArgs e)
         {
             Form CreateUser = new CreateUser();

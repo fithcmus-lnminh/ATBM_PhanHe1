@@ -40,12 +40,13 @@
             // 
             // listUserCbb
             // 
-            this.listUserCbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listUserCbb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.listUserCbb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.listUserCbb.FormattingEnabled = true;
-            this.listUserCbb.Location = new System.Drawing.Point(455, 100);
+            this.listUserCbb.Location = new System.Drawing.Point(496, 125);
             this.listUserCbb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listUserCbb.Name = "listUserCbb";
-            this.listUserCbb.Size = new System.Drawing.Size(226, 24);
+            this.listUserCbb.Size = new System.Drawing.Size(254, 28);
             this.listUserCbb.Sorted = true;
             this.listUserCbb.TabIndex = 35;
             this.listUserCbb.SelectedIndexChanged += new System.EventHandler(this.listUserCbb_SelectedIndexChanged);
@@ -59,10 +60,10 @@
             this.Admin_option});
             this.privUserLv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.privUserLv.HideSelection = false;
-            this.privUserLv.Location = new System.Drawing.Point(39, 158);
+            this.privUserLv.Location = new System.Drawing.Point(39, 205);
             this.privUserLv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.privUserLv.Name = "privUserLv";
-            this.privUserLv.Size = new System.Drawing.Size(831, 310);
+            this.privUserLv.Size = new System.Drawing.Size(934, 386);
             this.privUserLv.TabIndex = 33;
             this.privUserLv.UseCompatibleStateImageBehavior = false;
             this.privUserLv.View = System.Windows.Forms.View.Details;
@@ -70,25 +71,25 @@
             // Username
             // 
             this.Username.Text = "Username";
-            this.Username.Width = 150;
+            this.Username.Width = 186;
             // 
             // Privilege
             // 
             this.Privilege.Text = "Privilege";
-            this.Privilege.Width = 350;
+            this.Privilege.Width = 311;
             // 
             // Admin_option
             // 
             this.Admin_option.Text = "Admin Option";
-            this.Admin_option.Width = 125;
+            this.Admin_option.Width = 290;
             // 
             // chooseUsernameLb
             // 
             this.chooseUsernameLb.AutoSize = true;
             this.chooseUsernameLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chooseUsernameLb.Location = new System.Drawing.Point(248, 99);
+            this.chooseUsernameLb.Location = new System.Drawing.Point(272, 124);
             this.chooseUsernameLb.Name = "chooseUsernameLb";
-            this.chooseUsernameLb.Size = new System.Drawing.Size(184, 25);
+            this.chooseUsernameLb.Size = new System.Drawing.Size(218, 29);
             this.chooseUsernameLb.TabIndex = 34;
             this.chooseUsernameLb.Text = "Chọn người dùng:";
             // 
@@ -97,19 +98,19 @@
             this.privUserlabel.AutoSize = true;
             this.privUserlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.privUserlabel.ForeColor = System.Drawing.Color.MediumBlue;
-            this.privUserlabel.Location = new System.Drawing.Point(130, 31);
+            this.privUserlabel.Location = new System.Drawing.Point(146, 39);
             this.privUserlabel.Name = "privUserlabel";
-            this.privUserlabel.Size = new System.Drawing.Size(616, 42);
+            this.privUserlabel.Size = new System.Drawing.Size(730, 52);
             this.privUserlabel.TabIndex = 36;
             this.privUserlabel.Text = "THÔNG TIN QUYỀN NGƯỜI DÙNG";
             this.privUserlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserPriv
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(916, 512);
+            this.ClientSize = new System.Drawing.Size(1006, 629);
             this.Controls.Add(this.privUserlabel);
             this.Controls.Add(this.listUserCbb);
             this.Controls.Add(this.privUserLv);
@@ -119,6 +120,7 @@
             this.Name = "UserPriv";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin quyền người dùng";
+            this.Load += new System.EventHandler(this.UserPriv_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

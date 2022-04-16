@@ -56,6 +56,39 @@ namespace Data_Access_Layer
             return roles;
         }
 
+        public List<string> GetListRolesFromUserFromDatabase(string username)
+        {
+            var roles = new List<string>();
+            OracleConnection conn = ConnectToOracle();
+            OracleCommand oc = new OracleCommand();
+            oc.Connection = conn;
+            oc.CommandText = $"select granted_role from dba_role_privs where grantee = '{username}'";
+            var reader = oc.ExecuteReader();
+            while (reader.Read())
+            {
+                roles.Add(reader.GetString(0));
+            }
+            conn.Close();
+            Console.WriteLine(roles);
+            return roles;
+        }
+
+        public List<string> GetListUsersFromRoleFromDatabase(string role)
+        {
+            var users = new List<string>();
+            OracleConnection conn = ConnectToOracle();
+            OracleCommand orc = new OracleCommand();
+            orc.Connection = conn;
+            orc.CommandText = $"select grantee from dba_role_privs where granted_role = '{role}'";
+            var reader = orc.ExecuteReader();
+            while (reader.Read())
+            {
+                users.Add(reader.GetString(0));
+            }
+            conn.Close();
+            return users;
+        }
+
         public List<Priv> GetListPrivsFromDatabase(String objectGrantee, String typePriv, String typeObjectGrantee)
         {
             var privs = new List<Priv>();
@@ -516,6 +549,15 @@ namespace Data_Access_Layer
         }
 
         public void GrantUserToRole(string query)
+        {
+            OracleConnection conn = ConnectToOracle();
+            OracleCommand oc = new OracleCommand();
+            oc.Connection = conn;
+            oc.CommandText = query;
+            oc.ExecuteNonQuery();
+        }
+
+        public void RevokeUserFromRole(string query)
         {
             OracleConnection conn = ConnectToOracle();
             OracleCommand oc = new OracleCommand();

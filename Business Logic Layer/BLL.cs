@@ -22,6 +22,18 @@ namespace Business_Logic_Layer
             var roles = res.GetListRolesFromDatabase();
             return roles;
         }
+        public List<string> getListRolesFromUser(string username)
+        {
+            DAL res = new DAL();
+            var roles = res.GetListRolesFromUserFromDatabase(username);
+            return roles;
+        }
+        public List<string> getListUserFromRole(string rolename)
+        {
+            DAL res = new DAL();
+            var users = res.GetListUsersFromRoleFromDatabase(rolename);
+            return users;
+        }
         public bool createUserBLL(String username, String pwd)
         {
             DAL res = new DAL();
@@ -87,6 +99,12 @@ namespace Business_Logic_Layer
         {
             DAL res = new DAL();
             res.GrantUserToRole(query);
+        }
+
+        public void revokeUserFromRole(string query)
+        {
+            DAL res = new DAL();
+            res.RevokeUserFromRole(query);
         }
 
         public List<Role> getListPrivilegeSYS()

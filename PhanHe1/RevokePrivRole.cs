@@ -87,6 +87,11 @@ namespace PhanHe1
             }
         }
 
+        private void listRoleCbb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void listTypePrivCbb_SelectedValueChanged(object sender, EventArgs e)
         {
             ComboBox cb = sender as ComboBox;
